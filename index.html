@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nepali Date Converter — BS ↔ AD | नेपाली मिति</title>
+<meta name="description" content="Free, fast Bikram Sambat (BS) ↔ Gregorian (AD) date converter with a Nepali calendar. Open source, works offline, no ads.">
+<meta property="og:title" content="Nepali Date Converter — BS ↔ AD">
+<meta property="og:description" content="Convert Bikram Sambat and AD dates instantly. Today's Nepali date, monthly patro view, Nepali digits. Open source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nepali-date.sites.tab.bot/">
+<meta property="og:image" content="https://nepali-date.sites.tab.bot/og.png">
+<meta name="theme-color" content="#b91c1c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%85%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./app/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap row">
+    <div class="brand"><span class="flag" aria-hidden="true">🇳🇵</span> <b data-i18n="title">Nepali Date</b></div>
+    <button id="lang" class="pill" type="button" aria-label="Switch language">नेपाली</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="today card" aria-live="polite">
+    <p class="eyebrow" data-i18n="today">Today</p>
+    <h1 id="todayBs">—</h1>
+    <p id="todayAd" class="muted">—</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2 data-i18n="adToBs">AD → BS</h2>
+      <label class="lbl" for="adInput" data-i18n="pickAd">Pick an English (AD) date</label>
+      <input id="adInput" type="date" min="1943-04-14" max="2034-04-13">
+      <output id="adOut" class="result">—</output>
+      <button class="ghost copy" data-copy="adOut" type="button" data-i18n="copy">Copy</button>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="bsToAd">BS → AD</h2>
+      <label class="lbl" data-i18n="pickBs">Pick a Nepali (BS) date</label>
+      <div class="row3">
+        <select id="bsY" aria-label="BS year"></select>
+        <select id="bsM" aria-label="BS month"></select>
+        <select id="bsD" aria-label="BS day"></select>
+      </div>
+      <output id="bsOut" class="result">—</output>
+      <button class="ghost copy" data-copy="bsOut" type="button" data-i18n="copy">Copy</button>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="calhead">
+      <button id="prev" class="ghost" type="button" aria-label="Previous month">‹</button>
+      <h2 id="calTitle">—</h2>
+      <button id="next" class="ghost" type="button" aria-label="Next month">›</button>
+    </div>
+    <div id="cal" class="cal" role="grid"></div>
+    <p class="muted small" data-i18n="calNote">Big number = BS day · small number = AD day · Saturday is the public holiday.</p>
+  </section>
+
+  <section class="card dev">
+    <h2 data-i18n="dev">For developers</h2>
+    <p class="muted" data-i18n="devText">Zero-dependency JavaScript library, MIT licensed. Supports 2000–2090 BS, every day tested.</p>
+<pre><code>import { adToBs, bsToAd, formatBs } from './src/nepali-date.js';
+
+adToBs('2026-11-01');            // { year: 2083, month: 7, day: 15, weekday: 0 }
+bsToAd(2083, 1, 1);              // { year: 2026, month: 4, day: 14, ... }
+formatBs(adToBs(new Date()), 'YYYY MMMM D, dddd', 'ne'); // २०८३ कार्तिक १५, आइतबार</code></pre>
+    <a class="btn" href="https://github.com/nabinbabuuranw/nepali-date" rel="noopener">GitHub →</a>
+  </section>
+</main>
+
+<footer class="wrap foot muted small">
+  <span>Built by Nabin · <a href="https://adsrun.sites.tab.bot/" rel="noopener">ADSRUN AGENCY</a></span>
+  <span>Open source · MIT</span>
+</footer>
+<script type="module" src="./app/app.js"></script>
+</body>
+</html>
