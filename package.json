@@ -1,0 +1,33 @@
+{
+  "name": "nepali-date-bs",
+  "version": "1.0.0",
+  "description": "Tiny zero-dependency Bikram Sambat (BS) <-> Gregorian (AD) date converter for JavaScript, with a live web app.",
+  "type": "module",
+  "main": "src/nepali-date.js",
+  "exports": "./src/nepali-date.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "nepali",
+    "nepal",
+    "bikram-sambat",
+    "bs",
+    "date-converter",
+    "calendar",
+    "patro"
+  ],
+  "author": "Nabin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabinbabuuranw/nepali-date.git"
+  },
+  "homepage": "https://nepali-date.sites.tab.bot/"
+}
